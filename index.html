@@ -15,27 +15,37 @@
 
 </head>
 <body>
-<div class="jumbotron col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+<div id="jumbo" class="jumbotron col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
   <h1>Trivia!</h1>
   <br>
   <br>
   <p><a class="btn btn-primary btn-lg" href="#" role="button">Press here to Start!</a></p>
 </div>
-<div class="mainContainer col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+<div class="mainContainer col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
 <h1>HEADER</h1>
+<div id="show-number">60 second Timer</div>
 <h2>Question One: what?<span = "Q1"></span></h2>
-<div class="btn-group" role="group" aria-label="...">
-	<button type="button" class="btn btn-default">Left</button>
-  <button type="button" class="btn btn-default">Middle</button>
-  <button type="button" class="btn btn-default">Right</button>
-  <button type="button" class="btn btn-default">Last</button>
-</div>
+<label>
+        <input type="radio" name="1a" value="0" data-correct>
+        rainbow
+      </label>
+      <label>
+        <input type="radio" name="1b" value="1" data-correct>
+        rainbow
+      </label>
+      <label>
+        <input type="radio" name="1c" value="2" data-correct>
+        double rainbow
+      </label>
+      <label>
+        <input type="radio" name="1d" value="3" data-correct>
+        rainbow
+      </label>
+
 <br>
 <button type="button" class="btn btn-default">Done!</button>
 </div>
 <!--Javascript-->
-<script>
-
-</script>	
+<script src="assets/javascript/app.js"></script>	
 </body>
 </html> 
