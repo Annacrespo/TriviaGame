@@ -1,51 +1,247 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Trivia Time!</title>
-	<link rel="stylesheet" href="assets/css/style.css">
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!--jquery-->
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trivia Time!</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-<div id="jumbo" class="jumbotron col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-  <h1>Trivia!</h1>
-  <br>
-  <br>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Press here to Start!</a></p>
-</div>
-<div class="mainContainer col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
-<h1>HEADER</h1>
-<div id="show-number">60 second Timer</div>
-<h2>Question One: what?<span = "Q1"></span></h2>
-<label>
-        <input type="radio" name="1a" value="0" data-correct>
-        rainbow
-      </label>
-      <label>
-        <input type="radio" name="1b" value="1" data-correct>
-        rainbow
-      </label>
-      <label>
-        <input type="radio" name="1c" value="2" data-correct>
-        double rainbow
-      </label>
-      <label>
-        <input type="radio" name="1d" value="3" data-correct>
-        rainbow
-      </label>
 
-<br>
-<button type="button" class="btn btn-default">Done!</button>
-</div>
-<!--Javascript-->
-<script src="assets/javascript/app.js"></script>	
+<body>
+    <div id="jumbo" class="jumbotron col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
+        <h1>Trivia!</h1>
+        <br>
+        <p>You have 60 seconds to answer 10 questions.</p>
+        <p>Press the start button to begin</p>
+        <br>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Start!<span id="startButton"></span></a></p>
+    </div>
+    <div class="mainContainer col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
+        <h1>HEADER</h1>
+        <div id="show-number">60 second Timer</div>
+        <form class="simple-quiz">
+            <div id="questionOneContainer" style="display:none;">
+                <h2>Question One: Twat?</h2>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q1" value="1a">25%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q1" value="1b">50%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q1" value="1c">60%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q1" value="1d">25%</label>
+                </div>
+                <div id="log1"></div>
+            </div>
+
+            <div id="questionTwoContainer" style="display:none;">
+                <h2>Question Two: Twat?</h2>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q2" value="2a">25%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q2" value="2b">50%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q2" value="2c">60%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q2" value="2d">25%</label>
+                </div>
+                <div id="log2"></div>
+            </div>
+
+            <div id="questionThreeContainer" style="display:none;">
+                <h2>Question Three: Twat?</h2>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q3" value="3a">25%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q3" value="3b">50%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q3" value="3c">60%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q3" value="3d">25%</label>
+                </div>
+                <div id="log3"></div>
+            </div>
+
+            <div id="questionFourContainer" style="display:none;">
+                <h2>Question Four: Twat?</h2>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q4" value="4a">25%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q4" value="4b">50%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q4" value="4c">60%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q4" value="4d">25%</label>
+                </div>
+                <div id="log4"></div>
+            </div>
+            <div id="questionFiveContainer" style="display:none;">
+                <h2>Question Five: Twat?</h2>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q5" value="5a">25%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q5" value="5b">50%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q5" value="5c">60%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q5" value="5d">25%</label>
+                </div>
+                <div id="log5"></div>
+            </div>
+            
+            <div id="questionSixContainer" style="display:none;">
+                <h2>Question Six: Twat?</h2>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q6" value="6a">25%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q6" value="6b">50%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q6" value="6c">60%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q6" value="6d">25%</label>
+                </div>
+                <div id="log6"></div>
+            </div>
+            <div id="questionSevenContainer" style="display:none;">
+                <h2>Question Seven: Twat?</h2>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q7" value="7a">25%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q7" value="7b">50%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q7" value="7c">60%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q7" value="7d">25%</label>
+                </div>
+                <div id="log7"></div>
+            </div>
+            <div id="questionEightContainer" style="display:none;">
+                <h2>Question Eight: Twat?</h2>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q8" value="8a">25%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q8" value="8b">50%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q8" value="8c">60%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q8" value="8d">25%</label>
+                </div>
+                <div id="log8"></div>
+            </div>
+            <div id="questionNineContainer" style="display:none;">
+                <h2>Question Nine: Twat?</h2>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q9" value="9a">25%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q9" value="9b">50%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q9" value="9c">60%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q9" value="9d">25%</label>
+                </div>
+                <div id="log9"></div>
+            </div>
+            <div id="questionTenContainer" style="display:none;">
+                <h2>Question Ten: Twat?</h2>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q10" value="wrong">25%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q10" value="wrong">50%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q10" value="right">60%</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q10" value="wrong">25%</label>
+                </div>
+                <div id="log10"></div>
+            </div>
+            <br>
+            <br>
+            <input type="submit">
+            <form>
+                <br>
+
+                <!-- <div>
+                <h1>question 10 was: <input id="log10"></h1>
+                </div> -->
+
+    </div>
+    <!--Javascript-->
+    <script src="assets/javascript/app.js"></script>
 </body>
-</html> 
+
+</html>

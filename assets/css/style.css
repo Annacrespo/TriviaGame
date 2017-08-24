@@ -5,3 +5,8 @@
 .mainContainer {
 	text-align: center;
 }
+
+label
+{
+	display: block;
+}
