@@ -2,11 +2,9 @@ var number = 60;
 var intervalId;
 var wins = 0;
 var losses = 0;
-var noanswers=0;
+var noanswers = 0;
 var answer;
-
-           //1.   2.   3.   4.   5.   6.   7.   8.   9.   10
-var correct=["1a","2a","3a","4a","5a","6a","7a","8a","9a","10b"];
+var correct = ["1a", "2a", "3a", "4b", "5c", "6d", "7d", "8b", "9c", "10a"];
 
 $('#jumbo').on('click', function() {
     $('#jumbo').hide();
@@ -17,37 +15,34 @@ $('#jumbo').on('click', function() {
 function run() {
     intervalId = setInterval(decrement, 1000);
 
-    for(let i=0; i < correct.length; i++) {
-      $("#q"+i+" input").on("click", function() {
+    for (let i = 0; i < correct.length; i++) {
+        $("#q" + i + " input").on("click", function() {
 
-        answer = $("#q"+i+" input:checked").val();
+            answer = $("#q" + i + " input:checked").val();
 
-        if(answer) {
-          $("#q"+i).hide();
-          var next = i+1;
-          $("#q"+next).show();
+            if (answer) {
+                $("#q" + i).hide();
+                var next = i + 1;
+                $("#q" + next).show();
 
-          if(answer === correct[i-1]){
-            wins++;
-          }
-          else if(answer == null){
-            noanswers++;
-          }
-          else if(answer !== correct[i-1]){
-            losses++;
-          }
-        } 
-      })
+                if (answer === correct[i - 1]) {
+                    wins++;
+                } else if (answer == null) {
+                    noanswers++;
+                } else if (answer !== correct[i - 1]) {
+                    losses++;
+                }
+            }
+        })
     }
 
-    $("form").submit(function(e){
-      if(answer === correct[9]){
-        wins++;
-      }
-      else if(answer != correct[9]){
-        losses++;
-      }
-      stop();
+    $("form").submit(function(e) {
+        if (answer === correct[9]) {
+            wins++;
+        } else if (answer != correct[9]) {
+            losses++;
+        }
+        stop();
     });
 }
 
@@ -63,7 +58,7 @@ function decrement() {
 }
 
 function stop() {
-  intervalId = clearInterval(intervalId);
-  $("body").html("<h1>Correct: "+wins+"</h1><h2>Wrong: "+losses+"</h2>");
+    intervalId = clearInterval(intervalId);
+    $("body").html("<h5>Correct: " + wins + "</h5><h5>Wrong: " + losses + "</h5>");
 
 }

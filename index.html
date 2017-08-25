@@ -1,231 +1,225 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Trivia Time!</title>
-      <!-- Latest compiled and minified CSS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-      <link rel="stylesheet" href="assets/css/style.css">
-   </head>
-   <body>
-      <div id="jumbo" class="jumbotron col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
-         <h1>Trivia!</h1>
-         <br>
-         <p>You have 60 seconds to answer 10 questions.</p>
-         <p>Press the start button to begin</p>
-         <br>
-         <p><button id="start" class="btn btn-lg btn-primary">Start</button></p>
-      </div>
 
-      <div class="mainContainer col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
-         <div id="show-number">60 second Timer</div>
-         <form class="simple-quiz">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trivia Time!</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<body background="assets/images/background-1.jpg">
+    <div id="jumbo" class="jumbotron col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
+        <h1>Trivia!</h1>
+        <br>
+        <p>You have 60 seconds to answer 10 questions.</p>
+        <p>Press the start button to begin</p>
+        <br>
+        <p>
+            <button id="start" class="btn btn-lg btn-primary">Start</button>
+        </p>
+    </div>
+    <div class="mainContainer col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
+        <div id="show-number"><h1>60 second Timer</h1></div>
+        <form class="simple-quiz">
             <div id="q1" style="display:none;">
-               <h2>Question One: <br>Which animal is responsible for killing more people than plane crashes?</h2>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q1" value="1a">shark</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q1" value="1b">donkey</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q1" value="1c">bear</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q1" value="1d">mountain lion</label>
-               </div>
-               <div id="log1"></div>
-               <div id="winning" style="display:none;"></div>
-               <div id="losing" style="display:none;"></div>
+                <h5>Question One: <br>Which animal is responsible for killing more people than plane crashes?</h5>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q1" value="1a">shark</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q1" value="1b">donkey</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q1" value="1c">bear</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q1" value="1d">mountain lion</label>
+                </div>
             </div>
             <div id="q2" style="display:none;">
-               <h2>Question Two:<br>Coprastastaphobia is the fear of..</h2>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q2" value="2a">25%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q2" value="2b">50%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q2" value="2c">Cobras</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q2" value="2d">Constipation</label>
-               </div>
-               <div id="log2"></div>
+                <h5>Question Two:<br>Coprastastaphobia is the fear of..</h5>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q2" value="2a">Constipation</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q2" value="2b">Procrastination</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q2" value="2c">Cobras</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q2" value="2d">Pasta</label>
+                </div>
             </div>
             <div id="q3" style="display:none;">
-               <h2>Question Three: Twat?</h2>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q3" value="3a">25%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q3" value="3b">50%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q3" value="3c">60%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q3" value="3d">25%</label>
-               </div>
-               <div id="log3"></div>
+                <h5>Question Three:<br>What animal poops in cubic squares?</h5>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q3" value="3a">wombat</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q3" value="3b">porcupine</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q3" value="3c">sea cucumber</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q3" value="3d">box fish</label>
+                </div>
             </div>
             <div id="q4" style="display:none;">
-               <h2>Question Four: Twat?</h2>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q4" value="4a">25%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q4" value="4b">50%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q4" value="4c">60%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q4" value="4d">25%</label>
-               </div>
-               <div id="log4"></div>
+                <h5>Question Four:<br>What MPH do sneezes travel at?</h5>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q4" value="4a">75</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q4" value="4b">50</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q4" value="4c">100</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q4" value="4d">25</label>
+                </div>
             </div>
             <div id="q5" style="display:none;">
-               <h2>Question Five: Twat?</h2>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q5" value="5a">25%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q5" value="5b">50%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q5" value="5c">60%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q5" value="5d">25%</label>
-               </div>
-               <div id="log5"></div>
+                <h5>Question Five:<br>What animal in self defense will activate a ink sac gland?</h5>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q5" value="5a">cheetah</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q5" value="5b">owl</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q5" value="5c">squid</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q5" value="5d">Paris Hilton</label>
+                </div>
             </div>
             <div id="q6" style="display:none;">
-               <h2>Question Six: Twat?</h2>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q6" value="6a">25%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q6" value="6b">50%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q6" value="6c">60%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q6" value="6d">25%</label>
-               </div>
-               <div id="log6"></div>
+                <h5>Question Six:<br>If a Euro is worth $1.50, 5 Euros is worth what?</h5>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q6" value="6a">70 nickels</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q6" value="6b">30 quarters</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q6" value="6c">40 dimes</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q6" value="6d">90 pennies</label>
+                </div>
             </div>
             <div id="q7" style="display:none;">
-               <h2>Question Seven: Twat?</h2>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q7" value="7a">25%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q7" value="7b">50%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q7" value="7c">60%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q7" value="7d">25%</label>
-               </div>
-               <div id="log7"></div>
+                <h5>Question Seven:<br>Name that movie "Why don't you go back to your home on Whore Island?"</h5>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q7" value="7a">Two and a Half Men</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q7" value="7b">Zoolander</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q7" value="7c">Liar Liar</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q7" value="7d">Anchorman</label>
+                </div>
             </div>
             <div id="q8" style="display:none;">
-               <h2>Question Eight: Twat?</h2>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q8" value="8a">25%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q8" value="8b">50%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q8" value="8c">60%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q8" value="8d">25%</label>
-               </div>
-               <div id="log8"></div>
+                <h5>Question Eight:<br>Name that movie "If you are from Africa then why are you white?"</h5>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q8" value="8a">Casablanca</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q8" value="8b">Mean Girls</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q8" value="8c"></label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q8" value="8d">25%</label>
+                </div>
             </div>
             <div id="q9" style="display:none;">
-               <h2>Question Nine: Twat?</h2>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q9" value="9a">25%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q9" value="9b">50%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q9" value="9c">60%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q9" value="9d">25%</label>
-               </div>
-               <div id="log9"></div>
+                <h5>Question Nine:<br>Does Macellus Wallace look like?</h5>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q9" value="9a">black</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q9" value="9b">bald</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q9" value="9c">a Bitch</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q9" value="9d">young</label>
+                </div>
             </div>
             <div id="q10" style="display:none;">
-               <h2>Question Ten: Twat?</h2>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q10" value="10a">25%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q10" value="10b">50%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q10" value="10c">60%</label>
-               </div>
-               <div class="radio">
-                  <label>
-                  <input type="radio" name="Q10" value="10d">25%</label>
-               </div>
-               <button class="btn btn-lg btn-primary" id="submit">Submit</button>
+                <h5>Question Ten:<br>What movie was the first toilet flush in?</h5>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q10" value="10a">Psycho</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q10" value="10b">Evil Dead</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q10" value="10c">Gone with the Wind</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Q10" value="10d">Grease</label>
+                </div>
+                <button class="btn btn-lg btn-primary" id="submit">Submit</button>
             </div>
-         </form>
-      </div>
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <script src="assets/javascript/app.js"></script>
-   </body>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/app.js"></script>
+</body>
+
 </html>
